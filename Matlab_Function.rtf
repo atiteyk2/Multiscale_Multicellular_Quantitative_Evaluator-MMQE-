@@ -1,0 +1,192 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red14\green0\blue255;\red2\green128\blue9;}
+{\*\expandedcolortbl;;\csgenericrgb\c5490\c0\c100000;\csgenericrgb\c784\c50196\c3529;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs20 \cf2 function\cf0  dydt = model_1_diffun(~,y,r)
+\fs24 \
+\pard\pardeftab720\partightenfactor0
+
+\fs20 \cf0 dydt = zeros(8,1);
+\fs24 \
+\pard\pardeftab720\partightenfactor0
+
+\fs20 \cf3 %%%%%%%%%%%%%%%%%%%%
+\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs20 \cf0 L = 100;
+\fs24 \
+
+\fs20 Mu_a = 0.085;
+\fs24 \
+
+\fs20 Sig = 1;
+\fs24 \
+
+\fs20 Th0 = 805;
+\fs24 \
+
+\fs20 Mu_death = 0.01; \cf3 % T cell death rate
+\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs20 \cf3  
+\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs20 \cf0 Rate_prod = Th0*Mu_death;
+\fs24 \
+
+\fs20 AntiG = lognrnd(Mu_a,Sig,1,L);
+\fs24 \
+
+\fs20 AntiG_die = 3.97e-2; \cf3 % rate of antigen dearth
+\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs20 \cf3 %%%%%%%%%%%%%%%%%%%%
+\fs24 \cf0 \
+
+\fs20 \cf3 %%
+\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs20 \cf0 Ab_2 = 5.62e-4; \cf3 % Internalization rate of bound receptors
+\fs24 \cf0 \
+
+\fs20 Au_2 = 1.4e-4; \cf3 % Internalization  rates of unbound receptors
+\fs24 \cf0 \
+
+\fs20 Ab_4 = 5.27e-4; \cf3 % Internalization rate of bound receptors
+\fs24 \cf0 \
+
+\fs20 Au_4 = 0.35e-4; \cf3 % Internalization  rates of unbound receptors
+\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs20 \cf3 %%
+\fs24 \cf0 \
+
+\fs20 \cf3 % L = 100;
+\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs20 \cf0 IL2 = 1.5e-11; \cf3 % # 3e-11; % # 1.5e-11;
+\fs24 \cf0 \
+
+\fs20 IL4 = 1.5e-10; \cf3 %3.5e-11; % Mole
+\fs24 \cf0 \
+
+\fs20 mu_2 = log(1698);      
+\fs24 \
+
+\fs20 sigma_2 = 1; 
+\fs24 \
+
+\fs20 mu_4 = log(7080);
+\fs24 \
+
+\fs20 sigma_4 = 1;
+\fs24 \
+\pard\pardeftab720\partightenfactor0
+
+\fs20 \cf3 %%
+\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs20 \cf0 No_2 = lognrnd(mu_2,sigma_2,1,L); \cf3 % Number of receptors on the cell surface 
+\fs24 \cf0 \
+
+\fs20 No_4 = lognrnd(mu_4,sigma_4,1,L);
+\fs24 \
+
+\fs20  
+\fs24 \
+
+\fs20 syn = 8.8e-8; \cf3 % synergy
+\fs24 \cf0 \
+
+\fs20 Gs = 0.009;
+\fs24 \
+
+\fs20  
+\fs24 \
+
+\fs20 Tr_IL2b = 2e4; \cf3 % Threshold number of IL4
+\fs24 \cf0 \
+
+\fs20 Mu_Bdeath = 0.01; \cf3 %B cell death rate
+\fs24 \cf0 \
+
+\fs20 Mu_Bdiff = 0.16e4; \cf3 %B cell diff rate
+\fs24 \cf0 \
+
+\fs20 s_IL4b = 18e4; \cf3 % Threshold number of IL4
+\fs24 \cf0 \
+
+\fs20 G2 = 0.0035; \cf3 % B cell simulation rate by IL2
+\fs24 \cf0 \
+
+\fs20 Gp = 3; \cf3 %1.2; % # r(8) plasma B cell production rate
+\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs20 \cf3  
+\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs20 \cf2 for\cf0  i = 1:L
+\fs24 \
+\pard\pardeftab720\partightenfactor0
+
+\fs20 \cf0     dydt(1) = No_4(i) - r(1)*IL4*y(1) + r(2)*y(2) - Au_4*y(1); \cf3 % EQUATION (2)
+\fs24 \cf0 \
+
+\fs20     dydt(2) = r(1)*IL4*y(1) - r(2)*y(2) - Ab_4*y(2); \cf3 % EQUATION (3)
+\fs24 \cf0 \
+
+\fs20     
+\fs24 \
+
+\fs20     dydt(3) = No_2(i) - r(3)*IL2*y(3) + r(4)*y(4) - Au_2*y(3) - syn*y(2)*y(3); \cf3 % EQUATION (4)
+\fs24 \cf0 \
+
+\fs20     dydt(4) = r(3)*IL2*y(3) - r(4)*y(4) - Ab_2*y(4);  \cf3 %EQUATION (5)
+\fs24 \cf0 \
+
+\fs20     
+\fs24 \
+
+\fs20     dydt(5) =  Rate_prod*y(6) + Gs*y(5)*y(4)/(y(4) + Tr_IL2b)- Mu_death*y(5); \cf3 % EQUATION (8) % # Rate_prod*y(2) + #- r(5)*AntiG(i)*y(5);
+\fs24 \cf0 \
+
+\fs20     dydt(6) = r(6)*AntiG(i) - AntiG_die*y(6);  \cf3 % EQUATION (9)
+\fs24 \cf0 \
+
+\fs20     
+\fs24 \
+
+\fs20     dydt(7) = r(7)*y(5)*y(2)/(y(2) + Tr_IL2b) + G2*y(7)*y(4)/(y(4) + s_IL4b) - (Mu_Bdeath + Mu_Bdiff)*y(7); \cf3 % EQUATION (6) % # Rate_prod*y(2) + #- r(5)*AntiG(i)*y(5);
+\fs24 \cf0 \
+
+\fs20     dydt(8) = Gp*y(7); \cf3 % EQUATION (7)
+\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs20 \cf2 end
+\fs24 \cf0 \
+
+\fs20 \cf2 end
+\fs24 \cf0 \
+
+\fs20 \cf2  
+\fs24 \cf0 \
+
+\fs20 \cf2  
+\fs24 \cf0 \
+\
+}
