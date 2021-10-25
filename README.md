@@ -1,6 +1,7 @@
 # Downregulation_Immunology
 
-## A sample readme for the implememtation of MMQE-Agent Based Modelling
+## A sample readme for the implememtation of MMQE-Agent Based Modelling in Mathematical modeling of proliferative immune response initiated by interactions between classical antigen presenting cells under joint antagonistic IL-2 and IL-4 signaling
+
 
 **We propose an agent-based model denoted as Multiscale Multicellular Quantitative Evaluator (MMQE) implemented using MATLAB.  MMQE combines well-defined  immune response network-based rules and ordinary differential equation-based (ODE) models to capture the complex  dynamic interactions between the proliferation levels of different types of communicating lymphocyte agents mediated by joint regulation of IL-2 and IL-4 to predict the emergent global behavior of the system during an immune response.** 
 
@@ -13,9 +14,9 @@ The DC_APC.m file implements the MMQE-Agent based model defining the activation 
 The Bcell_APC.m file implements the MMQE-Agent based model by defining the activation protocol of the immune system under the control of Bcell. 
 
 ### DC Bcell APC
-The DC_Bcell_APC.m file implements the MMQE-Agent based model by defining the activation protocol of the immune system under the control of Bcell. 
+The DC_Bcell_APC.m file implements the MMQE-Agent based model by defining the activation protocol of the immune system under the control of both DC and Bcell. 
 
-### Main _simulation
-soltrue_1, soltrue_2, and soltrue_3 defined the ODE functions DC_APC.m, Bcell_APC.m, and DC_Bcell_APC.m respectively for implementations.
-Here, we gave example of running DC_APC.m under the defined conditions to plot the figure 3.
-![image](https://user-images.githubusercontent.com/92449409/138775920-33917a41-dbd1-4785-b085-70b298475f24.png)
+### main simulation
+soltrue_1, soltrue_2, and soltrue_3 in the main_simulation defined the ODE functions related to the DC_APC.m, Bcell_APC.m, and DC_Bcell_APC.m function respectively for implementations.
+Here, we gave an example of running DC_APC.m under the defined conditions to plot the figure 3.
+
