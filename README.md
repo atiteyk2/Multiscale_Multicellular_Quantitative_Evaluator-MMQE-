@@ -4,7 +4,7 @@ We propose an agent-based model denoted as Multiscale Multicellular Quantitative
 
 We model the activation of the immune system in terms of different activation protocols of helper T cells by the interplay of biological agents of classic antigen presenting cells (APCs) and their joint activation which is confounded by the exposure time of the immune system to external pathogens.
 
-DC APC
+**DC APC**
 The DC_APC.m file implements the MMQE-Agent based model defining the activation protocol of the immune system under the control of DC. 
 
 Bcell APC
