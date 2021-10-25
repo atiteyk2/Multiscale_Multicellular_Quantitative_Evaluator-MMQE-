@@ -17,6 +17,7 @@ The Bcell_APC.m file implements the MMQE-Agent based model by defining the activ
 The DC_Bcell_APC.m file implements the MMQE-Agent based model by defining the activation protocol of the immune system under the control of both DC and Bcell. 
 
 ### main simulation
-soltrue_1, soltrue_2, and soltrue_3 in the main_simulation defined the ODE functions related to the DC_APC.m, Bcell_APC.m, and DC_Bcell_APC.m function respectively for implementations.
+soltrue_1, soltrue_2, and soltrue_3 in the main_simulation.m file define functions related to DC_APC.m, Bcell_APC.m, and DC_Bcell_APC.m respectively for implementations.
 Here, we gave an example of running DC_APC.m under the defined conditions to plot the figure 3.
+
 
