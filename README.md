@@ -1,9 +1,9 @@
 # Multiscale Multicellular Quantitative Evaluator (MMQE)
 
-## Implememtation of MMQE-Agent Based Modelling in: "Mathematical modeling of proliferative immune response initiated by interactions between classical antigen presenting cells under joint antagonistic IL-2 and IL-4 signaling".
+## Implememtation of MMQE-Hybrid Computational Approach in: "Mathematical modeling of proliferative immune response initiated by interactions between classical antigen presenting cells under joint antagonistic IL-2 and IL-4 signaling".
 
 
-**We propose an agent-based model denoted as Multiscale Multicellular Quantitative Evaluator (MMQE) implemented using MATLAB.  MMQE combines well-defined  immune response network-based rules and ordinary differential equation-based (ODE) models to capture the complex  dynamic interactions between the proliferation levels of different types of communicating lymphocyte agents mediated by joint regulation of IL-2 and IL-4 to predict the emergent global behavior of the system during an immune response.** 
+**We propose an Hybrid computational approach denoted as Multiscale Multicellular Quantitative Evaluator (MMQE) implemented using MATLAB.  MMQE combines well-defined  immune response network-based rules and ordinary differential equation-based (ODE) models to capture the complex  dynamic interactions between the proliferation levels of different types of communicating lymphocyte agents mediated by joint regulation of IL-2 and IL-4 to predict the emergent global behavior of the system during an immune response.** 
 
 **We model the activation of the immune system in terms of different activation protocols of helper T cells by the interplay of biological agents of classic antigen presenting cells (APCs) and their joint activation which is confounded by the exposure time of the immune system to external pathogens.**
 
